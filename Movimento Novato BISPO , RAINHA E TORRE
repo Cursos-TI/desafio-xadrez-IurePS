@@ -1,0 +1,53 @@
+#include <stdio.h>
+
+int main () {
+        int movimento;
+        char continuar;
+
+        do { // Movimento do Bispo , Rainha e Torre
+            printf("Escolha um movimento do Bispo, Rainha ou Torre (1 a 3):\n");
+            printf("1: Mover o Bispo 5 casas nas diagonais para a Direita\n");
+            printf("2: Mover a Rainha 8 casas para a Esquerda\n");
+            printf("3: Mover a Torre 5 Casas a Frente\n");
+
+            printf("Digite o número do movimento: ");
+            scanf("%d", &movimento);
+
+            if (movimento >= 1 && movimento <= 3) {
+                printf("Movimento escolhido: \n");
+
+                for (int i = 0; i < 5; i++) {
+                    if (movimento == 1) {
+                        printf("Acima Direita\n");
+                    } else if (movimento == 2) {
+                        printf("Esquerda\n");
+                    } else if (movimento == 3) {
+                        printf("Frente\n");
+                    }
+                }
+
+                if (movimento == 1) {
+                    printf("Mover o Bispo 5 casas nas diagonais para a Direita\n");
+                } else if (movimento == 2) {
+                    printf("Mover a Rainha 8 casas para a Esquerda\n");
+                } else if (movimento == 3) {
+                    printf("Mover a Torre 5 Casas a Frente\n");
+                }
+            } else {
+                printf("Movimento inválido! Escolha um número de 1 a 3.\n");
+            }
+
+            printf("Deseja escolher outro movimento? (s/n): ");
+            scanf(" %c", &continuar);
+
+            while (continuar != 's' && continuar != 'n') {
+                printf("Entrada inválida! Digite 's' para continuar ou 'n' para sair: ");
+                scanf(" %c", &continuar);
+            }
+
+        } while (continuar == 's');
+
+        return 0;
+    }
+
+   
